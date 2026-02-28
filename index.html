@@ -337,7 +337,7 @@ p { line-height:1.85; }
     rgba(17,17,17,0.96) 0%,
     rgba(17,17,17,0.80) 50%,
     rgba(17,17,17,0.40) 100%
-  ), url('assets/images/black-unisex-saloon-hyderabad-ak36hw64o5.jpg')
+  ), url('assets/images/hero-salon.jpg')
   center/cover no-repeat;
   position: relative;
   overflow: hidden;
@@ -1764,10 +1764,10 @@ body.no-scroll { overflow: hidden; }
   <div class="gallery-grid reveal">
     <!-- Cell 1 — large -->
     <div class="gal-cell" onclick="openLB(0)">
-      <img src="assets/images/18-10.jpeg"
+       <img src="assets/images/rksalon.jpg"
            alt="Men haircut and beard styling at RK Unisex Salon Korutla"
            loading="lazy" class="gal-bg"
-           data-fallback="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=1400&q=80"/>
+         data-fallback="assets/images/stock-men-haircut.jpg"/>
       <div class="gal-overlay">
         <span class="gal-label">Men's Haircut</span>
       </div>
@@ -1775,10 +1775,10 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 2 -->
     <div class="gal-cell" onclick="openLB(1)">
-      <img src="assets/images/16-10-2022.jpeg"
+       <img src="assets/images/rksalonimage1.jpg"
            alt="Hair coloring service at RK Unisex Salon Korutla, Telangana"
            loading="lazy" class="gal-bg"
-           data-fallback="https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=1400&q=80"/>
+         data-fallback="assets/images/stock-hair-colouring.jpg"/>
       <div class="gal-overlay">
         <span class="gal-label">Hair Colouring</span>
       </div>
@@ -1786,10 +1786,10 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 3 -->
     <div class="gal-cell" onclick="openLB(2)">
-      <img src="assets/images/FUi6hoNUUAA0xGA.jpg"
+       <img src="assets/images/2025-07-20.jpg"
            alt="Hair transformation before and after at RK Unisex Salon"
            loading="lazy" class="gal-bg"
-           data-fallback="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1400&q=80"/>
+         data-fallback="assets/images/stock-hair-transformation.jpg"/>
       <div class="gal-overlay">
         <span class="gal-label">Transformation</span>
       </div>
@@ -1797,10 +1797,10 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 4 -->
     <div class="gal-cell" onclick="openLB(3)">
-      <img src="assets/images/21-10.jpeg"
+       <img src="assets/images/2025-07-20 (1).jpg"
            alt="Scalp cleansing treatment at RK Unisex Salon Korutla"
            loading="lazy" class="gal-bg"
-           data-fallback="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=80"/>
+         data-fallback="assets/images/stock-scalp-treatment.jpg"/>
       <div class="gal-overlay">
         <span class="gal-label">Scalp Treatment</span>
       </div>
@@ -1808,7 +1808,7 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 5 -->
     <div class="gal-cell" onclick="openLB(4)">
-      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1400&q=80"
+      <img src="assets/images/stock-bridal-styling.jpg"
            alt="Bridal styling and makeup inspiration"
            loading="lazy" class="gal-bg"/>
       <div class="gal-overlay">
@@ -1818,7 +1818,7 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 6 -->
     <div class="gal-cell" onclick="openLB(5)">
-      <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1400&q=80"
+      <img src="assets/images/stock-premium-hair-spa.jpg"
            alt="Premium hair spa treatment"
            loading="lazy" class="gal-bg"/>
       <div class="gal-overlay">
@@ -1828,7 +1828,7 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 7 -->
     <div class="gal-cell" onclick="openLB(6)">
-      <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1400&q=80"
+      <img src="assets/images/stock-skin-glow-facial.jpg"
            alt="Professional skin glow facial setup"
            loading="lazy" class="gal-bg"/>
       <div class="gal-overlay">
@@ -1838,7 +1838,7 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 8 -->
     <div class="gal-cell" onclick="openLB(7)">
-      <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1400&q=80"
+      <img src="assets/images/stock-professional-barbering.jpg"
            alt="Classic barbering and finishing service"
            loading="lazy" class="gal-bg"/>
       <div class="gal-overlay">
@@ -2297,14 +2297,14 @@ document.querySelectorAll('#gallery img[data-fallback]').forEach((imageEl) => {
 });
 
 const lbImages = [
-  { src: 'assets/images/18-10.jpeg',          label: "Men's Haircut",          fallback: 'https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=1600&q=80' },
-  { src: 'assets/images/16-10-2022.jpeg',     label: 'Hair Colouring',         fallback: 'https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=1600&q=80' },
-  { src: 'assets/images/FUi6hoNUUAA0xGA.jpg', label: 'Hair Transformation',    fallback: 'https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1600&q=80' },
-  { src: 'assets/images/21-10.jpeg',          label: 'Scalp Treatment',        fallback: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80' },
-  { src: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=80', label: 'Bridal Styling' },
-  { src: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1600&q=80', label: 'Premium Hair Spa' },
-  { src: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1600&q=80', label: 'Skin Glow Facial' },
-  { src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1600&q=80', label: 'Professional Barbering' }
+  { src: 'assets/images/rksalon.jpg',                      label: "Men's Haircut",       fallback: 'assets/images/stock-men-haircut.jpg' },
+  { src: 'assets/images/rksalonimage1.jpg',                label: 'Hair Colouring',      fallback: 'assets/images/stock-hair-colouring.jpg' },
+  { src: 'assets/images/2025-07-20.jpg',                   label: 'Hair Transformation', fallback: 'assets/images/stock-hair-transformation.jpg' },
+  { src: 'assets/images/2025-07-20 (1).jpg',               label: 'Scalp Treatment',     fallback: 'assets/images/stock-scalp-treatment.jpg' },
+  { src: 'assets/images/stock-bridal-styling.jpg',         label: 'Bridal Styling' },
+  { src: 'assets/images/stock-premium-hair-spa.jpg',       label: 'Premium Hair Spa' },
+  { src: 'assets/images/stock-skin-glow-facial.jpg',       label: 'Skin Glow Facial' },
+  { src: 'assets/images/stock-professional-barbering.jpg', label: 'Professional Barbering' }
 ];
 let lbIdx = 0;
 
