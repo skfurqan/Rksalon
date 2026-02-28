@@ -17,13 +17,14 @@
 <meta property="og:description" content="Top-rated salon services in Korutla, Telangana. Hair, bridal makeup, skin treatments & grooming. Opens daily · Closes 9 PM.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.google.com/maps/place/Rk+Unisex+Salon/@18.8232482,78.706748,17z">
-<meta property="og:image" content="assets/images/unnamed (1).jpg">
+<meta property="og:image" content="assets/images/rksalon.jpg">
 <meta property="og:locale" content="en_IN">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RK Unisex Salon Korutla">
 <meta name="twitter:description" content="Professional salon services in Korutla, Telangana. Book via WhatsApp!">
+<meta name="twitter:image" content="assets/images/rksalon.jpg">
 
 <!-- Canonical -->
 <link rel="canonical" href="https://www.google.com/maps/place/Rk+Unisex+Salon/@18.8232482,78.706748,17z">
@@ -36,7 +37,7 @@
   "@context": "https://schema.org",
   "@type": "HairSalon",
   "name": "RK Unisex Salon",
-  "image": "assets/images/unnamed (1).jpg",
+  "image": "assets/images/rksalon.jpg",
   "url": "https://www.google.com/maps/place/Rk+Unisex+Salon/@18.8232482,78.706748,17z",
   "telephone": "+918886038368",
   "priceRange": "₹₹",
@@ -337,8 +338,8 @@ p { line-height:1.85; }
     rgba(17,17,17,0.96) 0%,
     rgba(17,17,17,0.80) 50%,
     rgba(17,17,17,0.40) 100%
-  ), url('assets/images/hero-salon.jpg')
-  center/cover no-repeat;
+  ), url('assets/images/rksalon.jpg')
+  center center/cover no-repeat;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1048,6 +1049,8 @@ footer {
 
 /* ── ≤768px Tablet Portrait ── */
 @media (max-width:768px) {
+  #hero { background-position: center top; }
+
   .nav-links, .nav-right { display:none; }
   .ham { display:flex; }
   #nav { padding:0 clamp(20px,5vw,40px); }
