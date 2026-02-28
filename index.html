@@ -944,31 +944,25 @@ p { line-height:1.85; }
 .wa-float {
   position:fixed; bottom:clamp(20px,3vw,32px); right:clamp(20px,3vw,32px);
   z-index:300;
-  display:flex; align-items:center; gap:10px;
+  display:flex; align-items:center; justify-content:center;
   background:var(--wa-green); color:var(--white);
-  padding:clamp(12px,1.5vw,15px) clamp(16px,2vw,24px);
+  width:58px; height:58px;
+  border-radius:50%;
   box-shadow:0 8px 30px rgba(37,211,102,0.45);
   transition:var(--transition);
-  font-family:'Poppins',sans-serif;
-  font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase;
   animation:waFloat 3s ease-in-out infinite;
 }
 .wa-float:hover { background:#1fba5a; transform:translateY(-3px); box-shadow:0 14px 40px rgba(37,211,102,0.55); }
 .wa-float svg { flex-shrink:0; }
 .wa-float-text { display:none; }
-@media (min-width:540px) { .wa-float-text { display:inline; } }
 @media (max-width:768px) {
   .wa-float {
-    left:12px;
-    right:12px;
+    left:auto;
+    right:14px;
     bottom:max(10px, env(safe-area-inset-bottom));
-    justify-content:center;
-    padding:14px 18px;
-    border-radius:10px;
-    gap:8px;
-    letter-spacing:1.4px;
+    width:54px;
+    height:54px;
   }
-  .wa-float-text { display:inline; }
 }
 
 /* ═══════════════════════════════════════════
@@ -1001,6 +995,7 @@ footer {
   color:rgba(255,255,255,0.45); font-size:11px; letter-spacing:.5px;
   transition:var(--transition);
 }
+.f-soc svg { width:16px; height:16px; fill:currentColor; display:block; }
 .f-soc:hover { background:var(--gold); color:var(--black); border-color:var(--gold); }
 .foot-col h5 { font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:clamp(14px,2vw,24px); font-weight:600; }
 .foot-col ul li { margin-bottom:clamp(8px,1.2vw,13px); }
@@ -2110,10 +2105,18 @@ body.no-scroll { overflow: hidden; }
       </div>
       <p class="foot-tagline">Professional hair, beauty &amp; grooming services in Korutla, Telangana. Trusted by the community since 2019.</p>
       <div class="foot-socials">
-        <a href="https://www.instagram.com/rkunisex_salon_makeovers?igsh=MWpvczNxaml2ajVseQ==" class="f-soc" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">ig</a>
-        <a href="https://www.facebook.com/Rachakondakarthi" class="f-soc" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">fb</a>
-        <a href="https://wa.me/918886038368" class="f-soc" target="_blank" rel="noopener" aria-label="WhatsApp us">wa</a>
-        <a href="https://www.google.com/maps/place/Rk+Unisex+Salon/@18.8232482,78.706748,17z" class="f-soc" target="_blank" rel="noopener" aria-label="Find us on Google Maps">📍</a>
+        <a href="https://www.instagram.com/rkunisex_salon_makeovers?igsh=MWpvczNxaml2ajVseQ==" class="f-soc" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/Rachakondakarthi" class="f-soc" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H8v3.2h2.4V22h3.1z"/></svg>
+        </a>
+        <a href="https://wa.me/918886038368" class="f-soc" target="_blank" rel="noopener" aria-label="WhatsApp us">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.18-.29-.02-.46.13-.6.14-.14.3-.35.45-.52.14-.17.19-.29.29-.49.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.14.2 2.09 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.11.57-.08 1.76-.72 2-1.41.25-.69.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35zM12.01 2.18a9.82 9.82 0 0 0-8.52 14.7L2.18 21.82l5.04-1.32a9.82 9.82 0 1 0 4.79-18.32zm0 17.64a7.8 7.8 0 0 1-3.98-1.1l-.29-.17-2.99.78.8-2.91-.19-.3a7.82 7.82 0 1 1 6.65 3.7z"/></svg>
+        </a>
+        <a href="https://www.google.com/maps/place/Rk+Unisex+Salon/@18.8232482,78.706748,17z" class="f-soc" target="_blank" rel="noopener" aria-label="Find us on Google Maps">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+        </a>
       </div>
     </div>
     <div class="foot-col">
