@@ -679,9 +679,9 @@ p { line-height:1.85; }
 }
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  grid-template-rows: 280px 280px;
-  gap: 4px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: 260px 260px;
+  gap: 8px;
 }
 .gal-cell {
   position: relative;
@@ -690,6 +690,7 @@ p { line-height:1.85; }
   background: #1a1a1a;
 }
 .gal-cell:first-child {
+  grid-column: span 2;
   grid-row: span 2;
 }
 .gal-cell img.gal-bg {
@@ -1031,14 +1032,12 @@ footer {
   .pillars { grid-template-columns:repeat(2,1fr); }
 
   .gallery-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 220px 220px 220px;
   }
   .gal-cell:first-child {
-    grid-row: span 1;
-  }
-  .gal-cell:last-child {
-    display: block;
+    grid-column: span 2;
+    grid-row: span 2;
   }
 
   .foot-top { grid-template-columns:1fr 1fr; gap:36px; }
@@ -1064,10 +1063,11 @@ footer {
 
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 180px 180px;
+    grid-template-rows: repeat(4, 180px);
   }
-  .gal-cell:nth-child(5) {
-    display: none;
+  .gal-cell:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
   }
 
   .reviews-grid { grid-template-columns:1fr; }
@@ -1100,8 +1100,9 @@ footer {
   .gal-cell {
     height: 240px;
   }
-  .gal-cell:nth-child(5) {
-    display: block;
+  .gal-cell:first-child {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 
   .rating-banner { flex-direction:column; align-items:flex-start; gap:10px; }
@@ -1757,7 +1758,7 @@ body.no-scroll { overflow: hidden; }
       <h2 class="section-title">Salon <em>Gallery</em></h2>
     </div>
     <p style="font-size:12px; color:var(--text-light); max-width:220px; text-align:right; line-height:1.9;">
-      Add your real salon photos here for maximum impact
+      Real client work and curated inspiration from our signature salon styles
     </p>
   </div>
   <div class="gallery-grid reveal">
@@ -1765,7 +1766,8 @@ body.no-scroll { overflow: hidden; }
     <div class="gal-cell" onclick="openLB(0)">
       <img src="assets/images/18-10.jpeg"
            alt="Men haircut and beard styling at RK Unisex Salon Korutla"
-           loading="lazy" class="gal-bg"/>
+           loading="lazy" class="gal-bg"
+           data-fallback="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=1400&q=80"/>
       <div class="gal-overlay">
         <span class="gal-label">Men's Haircut</span>
       </div>
@@ -1775,7 +1777,8 @@ body.no-scroll { overflow: hidden; }
     <div class="gal-cell" onclick="openLB(1)">
       <img src="assets/images/16-10-2022.jpeg"
            alt="Hair coloring service at RK Unisex Salon Korutla, Telangana"
-           loading="lazy" class="gal-bg"/>
+           loading="lazy" class="gal-bg"
+           data-fallback="https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=1400&q=80"/>
       <div class="gal-overlay">
         <span class="gal-label">Hair Colouring</span>
       </div>
@@ -1785,7 +1788,8 @@ body.no-scroll { overflow: hidden; }
     <div class="gal-cell" onclick="openLB(2)">
       <img src="assets/images/FUi6hoNUUAA0xGA.jpg"
            alt="Hair transformation before and after at RK Unisex Salon"
-           loading="lazy" class="gal-bg"/>
+           loading="lazy" class="gal-bg"
+           data-fallback="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1400&q=80"/>
       <div class="gal-overlay">
         <span class="gal-label">Transformation</span>
       </div>
@@ -1795,7 +1799,8 @@ body.no-scroll { overflow: hidden; }
     <div class="gal-cell" onclick="openLB(3)">
       <img src="assets/images/21-10.jpeg"
            alt="Scalp cleansing treatment at RK Unisex Salon Korutla"
-           loading="lazy" class="gal-bg"/>
+           loading="lazy" class="gal-bg"
+           data-fallback="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=80"/>
       <div class="gal-overlay">
         <span class="gal-label">Scalp Treatment</span>
       </div>
@@ -1803,21 +1808,41 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 5 -->
     <div class="gal-cell" onclick="openLB(4)">
-      <img src="assets/images/07-10-2022.jpeg"
-           alt="Body scrub spa service at RK Unisex Salon Korutla"
+      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1400&q=80"
+           alt="Bridal styling and makeup inspiration"
            loading="lazy" class="gal-bg"/>
       <div class="gal-overlay">
-        <span class="gal-label">Body Scrub</span>
+        <span class="gal-label">Bridal Styling</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
     <!-- Cell 6 -->
     <div class="gal-cell" onclick="openLB(5)">
-      <img src="assets/images/1st Post (2).jpeg"
-           alt="Mini packages at RK Unisex Salon Korutla"
+      <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1400&q=80"
+           alt="Premium hair spa treatment"
            loading="lazy" class="gal-bg"/>
       <div class="gal-overlay">
-        <span class="gal-label">Mini Packages</span>
+        <span class="gal-label">Premium Hair Spa</span>
+      </div>
+      <div class="gal-zoom">+</div>
+    </div>
+    <!-- Cell 7 -->
+    <div class="gal-cell" onclick="openLB(6)">
+      <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1400&q=80"
+           alt="Professional skin glow facial setup"
+           loading="lazy" class="gal-bg"/>
+      <div class="gal-overlay">
+        <span class="gal-label">Skin Glow Facial</span>
+      </div>
+      <div class="gal-zoom">+</div>
+    </div>
+    <!-- Cell 8 -->
+    <div class="gal-cell" onclick="openLB(7)">
+      <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1400&q=80"
+           alt="Classic barbering and finishing service"
+           loading="lazy" class="gal-bg"/>
+      <div class="gal-overlay">
+        <span class="gal-label">Professional Barbering</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
@@ -2262,13 +2287,24 @@ document.getElementById('bookModal').addEventListener('click', function(e) {
 /* ════════════════════
    GALLERY LIGHTBOX
 ════════════════════ */
+document.querySelectorAll('#gallery img[data-fallback]').forEach((imageEl) => {
+  imageEl.addEventListener('error', function onImgError() {
+    const fallbackSrc = imageEl.getAttribute('data-fallback');
+    if (!fallbackSrc) return;
+    imageEl.removeEventListener('error', onImgError);
+    imageEl.src = fallbackSrc;
+  });
+});
+
 const lbImages = [
-  { src: 'assets/images/18-10.jpeg',          label: "Men's Haircut"       },
-  { src: 'assets/images/16-10-2022.jpeg',     label: 'Hair Colouring'      },
-  { src: 'assets/images/FUi6hoNUUAA0xGA.jpg', label: 'Hair Transformation' },
-  { src: 'assets/images/21-10.jpeg',          label: 'Scalp Treatment'     },
-  { src: 'assets/images/07-10-2022.jpeg',     label: 'Body Scrub'          },
-  { src: 'assets/images/1st Post (2).jpeg',   label: 'Mini Packages'       }
+  { src: 'assets/images/18-10.jpeg',          label: "Men's Haircut",          fallback: 'https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=1600&q=80' },
+  { src: 'assets/images/16-10-2022.jpeg',     label: 'Hair Colouring',         fallback: 'https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=1600&q=80' },
+  { src: 'assets/images/FUi6hoNUUAA0xGA.jpg', label: 'Hair Transformation',    fallback: 'https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1600&q=80' },
+  { src: 'assets/images/21-10.jpeg',          label: 'Scalp Treatment',        fallback: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80' },
+  { src: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=80', label: 'Bridal Styling' },
+  { src: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1600&q=80', label: 'Premium Hair Spa' },
+  { src: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1600&q=80', label: 'Skin Glow Facial' },
+  { src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1600&q=80', label: 'Professional Barbering' }
 ];
 let lbIdx = 0;
 
@@ -2296,6 +2332,13 @@ function lbUpdate(animate) {
     wrap.classList.remove('animating');
     void wrap.offsetWidth;
     wrap.classList.add('animating');
+  }
+  img.onerror = null;
+  if (lbImages[lbIdx].fallback) {
+    img.onerror = () => {
+      img.onerror = null;
+      img.src = lbImages[lbIdx].fallback;
+    };
   }
   img.src   = lbImages[lbIdx].src;
   img.alt   = lbImages[lbIdx].label + ' at RK Unisex Salon Korutla';
