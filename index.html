@@ -16,18 +16,18 @@
 <meta property="og:title" content="RK Unisex Salon – Korutla, Telangana">
 <meta property="og:description" content="Top-rated salon services in Korutla, Telangana. Hair, bridal makeup, skin treatments & grooming. Opens daily · Closes 9 PM.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.google.com/maps/place/Rk+Unisex+Salon/@18.8232482,78.706748,17z">
-<meta property="og:image" content="assets/images/rksalon.jpg">
+<meta property="og:url" content="https://skfurqan.github.io/Rksalon/">
+<meta property="og:image" content="assets/images/rksalon.webp">
 <meta property="og:locale" content="en_IN">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RK Unisex Salon Korutla">
 <meta name="twitter:description" content="Professional salon services in Korutla, Telangana. Book via WhatsApp!">
-<meta name="twitter:image" content="assets/images/rksalon.jpg">
+<meta name="twitter:image" content="assets/images/rksalon.webp">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://www.google.com/maps/place/Rk+Unisex+Salon/@18.8232482,78.706748,17z">
+<link rel="canonical" href="https://skfurqan.github.io/Rksalon/">
 
 <!-- ═══════════════════════════════════════════
      JSON-LD LOCAL BUSINESS SCHEMA
@@ -37,8 +37,8 @@
   "@context": "https://schema.org",
   "@type": "HairSalon",
   "name": "RK Unisex Salon",
-  "image": "assets/images/rksalon.jpg",
-  "url": "https://www.google.com/maps/place/Rk+Unisex+Salon/@18.8232482,78.706748,17z",
+  "image": "assets/images/rksalon.webp",
+  "url": "https://skfurqan.github.io/Rksalon/",
   "telephone": "+918886038368",
   "priceRange": "₹₹",
   "aggregateRating": {
@@ -338,7 +338,7 @@ p { line-height:1.85; }
     rgba(17,17,17,0.96) 0%,
     rgba(17,17,17,0.80) 50%,
     rgba(17,17,17,0.40) 100%
-  ), url('assets/images/rksalon.jpg')
+  ), url('assets/images/rksalon.webp')
   center center/cover no-repeat;
   position: relative;
   overflow: hidden;
@@ -957,6 +957,19 @@ p { line-height:1.85; }
 .wa-float svg { flex-shrink:0; }
 .wa-float-text { display:none; }
 @media (min-width:540px) { .wa-float-text { display:inline; } }
+@media (max-width:768px) {
+  .wa-float {
+    left:12px;
+    right:12px;
+    bottom:max(10px, env(safe-area-inset-bottom));
+    justify-content:center;
+    padding:14px 18px;
+    border-radius:10px;
+    gap:8px;
+    letter-spacing:1.4px;
+  }
+  .wa-float-text { display:inline; }
+}
 
 /* ═══════════════════════════════════════════
    FOOTER
@@ -1767,10 +1780,11 @@ body.no-scroll { overflow: hidden; }
   <div class="gallery-grid reveal">
     <!-- Cell 1 — large -->
     <div class="gal-cell" onclick="openLB(0)">
-       <img src="assets/images/rksalon.jpg"
+       <img src="assets/images/rksalon.webp"
            alt="Men haircut and beard styling at RK Unisex Salon Korutla"
            loading="lazy" class="gal-bg"
-         data-fallback="assets/images/stock-men-haircut.jpg"/>
+           width="400" height="225"
+         data-fallback="assets/images/stock-men-haircut.webp"/>
       <div class="gal-overlay">
         <span class="gal-label">Men's Haircut</span>
       </div>
@@ -1778,10 +1792,11 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 2 -->
     <div class="gal-cell" onclick="openLB(1)">
-       <img src="assets/images/rksalonimage1.jpg"
+       <img src="assets/images/rksalonimage1.webp"
            alt="Hair coloring service at RK Unisex Salon Korutla, Telangana"
            loading="lazy" class="gal-bg"
-         data-fallback="assets/images/stock-hair-colouring.jpg"/>
+           width="400" height="533"
+         data-fallback="assets/images/stock-hair-colouring.webp"/>
       <div class="gal-overlay">
         <span class="gal-label">Hair Colouring</span>
       </div>
@@ -1789,10 +1804,11 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 3 -->
     <div class="gal-cell" onclick="openLB(2)">
-       <img src="assets/images/2025-07-20.jpg"
+       <img src="assets/images/2025-07-20.webp"
            alt="Hair transformation before and after at RK Unisex Salon"
            loading="lazy" class="gal-bg"
-         data-fallback="assets/images/stock-hair-transformation.jpg"/>
+           width="400" height="599"
+         data-fallback="assets/images/stock-hair-transformation.webp"/>
       <div class="gal-overlay">
         <span class="gal-label">Transformation</span>
       </div>
@@ -1800,10 +1816,11 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 4 -->
     <div class="gal-cell" onclick="openLB(3)">
-       <img src="assets/images/2025-07-20 (1).jpg"
+       <img src="assets/images/2025-07-20 (1).webp"
            alt="Scalp cleansing treatment at RK Unisex Salon Korutla"
            loading="lazy" class="gal-bg"
-         data-fallback="assets/images/stock-scalp-treatment.jpg"/>
+           width="400" height="891"
+         data-fallback="assets/images/stock-scalp-treatment.webp"/>
       <div class="gal-overlay">
         <span class="gal-label">Scalp Treatment</span>
       </div>
@@ -1811,9 +1828,10 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 5 -->
     <div class="gal-cell" onclick="openLB(4)">
-      <img src="assets/images/stock-bridal-styling.jpg"
+       <img src="assets/images/stock-bridal-styling.webp"
            alt="Bridal styling and makeup inspiration"
-           loading="lazy" class="gal-bg"/>
+         loading="lazy" class="gal-bg"
+         width="1600" height="1067"/>
       <div class="gal-overlay">
         <span class="gal-label">Bridal Styling</span>
       </div>
@@ -1821,9 +1839,10 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 6 -->
     <div class="gal-cell" onclick="openLB(5)">
-      <img src="assets/images/stock-premium-hair-spa.jpg"
+       <img src="assets/images/stock-premium-hair-spa.webp"
            alt="Premium hair spa treatment"
-           loading="lazy" class="gal-bg"/>
+         loading="lazy" class="gal-bg"
+         width="1600" height="1067"/>
       <div class="gal-overlay">
         <span class="gal-label">Premium Hair Spa</span>
       </div>
@@ -1831,9 +1850,10 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 7 -->
     <div class="gal-cell" onclick="openLB(6)">
-      <img src="assets/images/stock-skin-glow-facial.jpg"
+       <img src="assets/images/stock-skin-glow-facial.webp"
            alt="Professional skin glow facial setup"
-           loading="lazy" class="gal-bg"/>
+         loading="lazy" class="gal-bg"
+         width="1600" height="2397"/>
       <div class="gal-overlay">
         <span class="gal-label">Skin Glow Facial</span>
       </div>
@@ -1841,9 +1861,10 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 8 -->
     <div class="gal-cell" onclick="openLB(7)">
-      <img src="assets/images/stock-professional-barbering.jpg"
+       <img src="assets/images/stock-professional-barbering.webp"
            alt="Classic barbering and finishing service"
-           loading="lazy" class="gal-bg"/>
+         loading="lazy" class="gal-bg"
+         width="1600" height="1067"/>
       <div class="gal-overlay">
         <span class="gal-label">Professional Barbering</span>
       </div>
@@ -2300,14 +2321,14 @@ document.querySelectorAll('#gallery img[data-fallback]').forEach((imageEl) => {
 });
 
 const lbImages = [
-  { src: 'assets/images/rksalon.jpg',                      label: "Men's Haircut",       fallback: 'assets/images/stock-men-haircut.jpg' },
-  { src: 'assets/images/rksalonimage1.jpg',                label: 'Hair Colouring',      fallback: 'assets/images/stock-hair-colouring.jpg' },
-  { src: 'assets/images/2025-07-20.jpg',                   label: 'Hair Transformation', fallback: 'assets/images/stock-hair-transformation.jpg' },
-  { src: 'assets/images/2025-07-20 (1).jpg',               label: 'Scalp Treatment',     fallback: 'assets/images/stock-scalp-treatment.jpg' },
-  { src: 'assets/images/stock-bridal-styling.jpg',         label: 'Bridal Styling' },
-  { src: 'assets/images/stock-premium-hair-spa.jpg',       label: 'Premium Hair Spa' },
-  { src: 'assets/images/stock-skin-glow-facial.jpg',       label: 'Skin Glow Facial' },
-  { src: 'assets/images/stock-professional-barbering.jpg', label: 'Professional Barbering' }
+  { src: 'assets/images/rksalon.webp',                      label: "Men's Haircut",       fallback: 'assets/images/stock-men-haircut.webp' },
+  { src: 'assets/images/rksalonimage1.webp',                label: 'Hair Colouring',      fallback: 'assets/images/stock-hair-colouring.webp' },
+  { src: 'assets/images/2025-07-20.webp',                   label: 'Hair Transformation', fallback: 'assets/images/stock-hair-transformation.webp' },
+  { src: 'assets/images/2025-07-20 (1).webp',               label: 'Scalp Treatment',     fallback: 'assets/images/stock-scalp-treatment.webp' },
+  { src: 'assets/images/stock-bridal-styling.webp',         label: 'Bridal Styling' },
+  { src: 'assets/images/stock-premium-hair-spa.webp',       label: 'Premium Hair Spa' },
+  { src: 'assets/images/stock-skin-glow-facial.webp',       label: 'Skin Glow Facial' },
+  { src: 'assets/images/stock-professional-barbering.webp', label: 'Professional Barbering' }
 ];
 let lbIdx = 0;
 
