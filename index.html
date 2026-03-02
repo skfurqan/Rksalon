@@ -108,13 +108,19 @@
    RESET & BASE
 ═══════════════════════════════════════════ */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
+html {
+  scroll-behavior:smooth;
+  font-size:16px;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 img { max-width:100%; display:block; }
@@ -348,6 +354,8 @@ p { line-height:1.85; }
 /* Gold art deco background pattern */
 .hero-bg-art {
   position:absolute; inset:0;
+  overflow: hidden;
+  max-width: 100%;
   background:
     radial-gradient(ellipse at 70% 50%, rgba(200,169,106,0.08) 0%, transparent 60%),
     radial-gradient(ellipse at 10% 80%, rgba(200,169,106,0.05) 0%, transparent 50%);
@@ -424,6 +432,7 @@ p { line-height:1.85; }
 .marquee-bar {
   background:var(--gold);
   padding:13px 0; overflow:hidden;
+  max-width: 100%;
 }
 .marquee-track {
   display:flex; gap:0;
