@@ -1095,6 +1095,10 @@ footer {
     grid-row: span 2;
   }
 
+  .gal-zoom {
+    display: none !important;
+  }
+
   .reviews-grid { grid-template-columns:1fr; }
   .reviews-grid .review-card:last-child { display:block; }
 
@@ -1359,16 +1363,24 @@ body.no-scroll { overflow: hidden; }
 
 /* ── Gallery zoom icon ── */
 .gal-zoom {
-  position: absolute; top: 50%; left: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%,-50%) scale(0);
-  width: 50px; height: 50px;
+  width: 50px;
+  height: 50px;
   background: rgba(200,169,106,0.92);
   border-radius: 50%;
-  display: flex; align-items: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  color: #111; font-size: 24px; font-weight: 300;
+  color: #111;
+  font-size: 22px;
+  font-weight: 300;
   transition: transform .35s cubic-bezier(.34,1.56,.64,1), opacity .3s;
-  opacity: 0; pointer-events: none; z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
 }
 .gal-cell:hover .gal-zoom {
   transform: translate(-50%,-50%) scale(1);
@@ -1811,7 +1823,7 @@ body.no-scroll { overflow: hidden; }
            width="400" height="225"
          data-fallback="assets/images/stock-men-haircut.webp"/>
       <div class="gal-overlay">
-        <span class="gal-label">Men's Haircut</span>
+        <span class="gal-label">Our Salon</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
@@ -1823,7 +1835,7 @@ body.no-scroll { overflow: hidden; }
            width="400" height="533"
          data-fallback="assets/images/stock-hair-colouring.webp"/>
       <div class="gal-overlay">
-        <span class="gal-label">Hair Colouring</span>
+        <span class="gal-label">Bridal Hair</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
@@ -1835,7 +1847,7 @@ body.no-scroll { overflow: hidden; }
            width="400" height="599"
          data-fallback="assets/images/stock-hair-transformation.webp"/>
       <div class="gal-overlay">
-        <span class="gal-label">Transformation</span>
+        <span class="gal-label">Wedding Styling</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
@@ -1847,7 +1859,7 @@ body.no-scroll { overflow: hidden; }
            width="400" height="891"
          data-fallback="assets/images/stock-scalp-treatment.webp"/>
       <div class="gal-overlay">
-        <span class="gal-label">Scalp Treatment</span>
+        <span class="gal-label">Curly Hair</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
@@ -1869,7 +1881,7 @@ body.no-scroll { overflow: hidden; }
          loading="lazy" class="gal-bg"
          width="1600" height="1067"/>
       <div class="gal-overlay">
-        <span class="gal-label">Premium Hair Spa</span>
+        <span class="gal-label">Hair Spa</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
@@ -1880,7 +1892,7 @@ body.no-scroll { overflow: hidden; }
          loading="lazy" class="gal-bg"
          width="1600" height="2397"/>
       <div class="gal-overlay">
-        <span class="gal-label">Skin Glow Facial</span>
+        <span class="gal-label">Skin Facial</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
@@ -1891,7 +1903,7 @@ body.no-scroll { overflow: hidden; }
          loading="lazy" class="gal-bg"
          width="1600" height="1067"/>
       <div class="gal-overlay">
-        <span class="gal-label">Professional Barbering</span>
+        <span class="gal-label">Barbering</span>
       </div>
       <div class="gal-zoom">+</div>
     </div>
