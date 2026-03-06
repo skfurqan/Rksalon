@@ -17,14 +17,14 @@
 <meta property="og:description" content="Top-rated salon services in Korutla, Telangana. Hair, bridal makeup, skin treatments & grooming. Opens daily · Closes 9 PM.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skfurqan.github.io/Rksalon/">
-<meta property="og:image" content="assets/images/hero-salon.jpg">
+<meta property="og:image" content="assets/images/rksalon.webp">
 <meta property="og:locale" content="en_IN">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RK Unisex Salon Korutla">
 <meta name="twitter:description" content="Professional salon services in Korutla, Telangana. Book via WhatsApp!">
-<meta name="twitter:image" content="assets/images/hero-salon.jpg">
+<meta name="twitter:image" content="assets/images/rksalon.webp">
 
 <!-- Canonical -->
 <link rel="canonical" href="https://skfurqan.github.io/Rksalon/">
@@ -37,7 +37,7 @@
   "@context": "https://schema.org",
   "@type": "HairSalon",
   "name": "RK Unisex Salon",
-  "image": "assets/images/hero-salon.jpg",
+  "image": "assets/images/rksalon.webp",
   "url": "https://skfurqan.github.io/Rksalon/",
   "telephone": "+918886038368",
   "priceRange": "₹₹",
@@ -344,7 +344,7 @@ p { line-height:1.85; }
     rgba(17,17,17,0.96) 0%,
     rgba(17,17,17,0.80) 50%,
     rgba(17,17,17,0.40) 100%
-  ), url('assets/images/hero-salon.jpg')
+  ), url('assets/images/rksalon.webp')
   center center/cover no-repeat;
   position: relative;
   overflow: hidden;
@@ -1805,10 +1805,11 @@ body.no-scroll { overflow: hidden; }
   <div class="gallery-grid reveal">
     <!-- Cell 1 — large -->
     <div class="gal-cell" onclick="openLB(0)">
-         <img src="assets/images/stock-men-haircut.webp"
+       <img src="assets/images/rksalon.webp"
            alt="Men haircut and beard styling at RK Unisex Salon Korutla"
            loading="lazy" class="gal-bg"
-           width="1600" height="1067"/>
+           width="400" height="225"
+         data-fallback="assets/images/stock-men-haircut.webp"/>
       <div class="gal-overlay">
         <span class="gal-label">Men's Haircut</span>
       </div>
@@ -1816,10 +1817,11 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 2 -->
     <div class="gal-cell" onclick="openLB(1)">
-         <img src="assets/images/stock-hair-colouring.webp"
+       <img src="assets/images/rksalonimage1.webp"
            alt="Hair coloring service at RK Unisex Salon Korutla, Telangana"
            loading="lazy" class="gal-bg"
-           width="1600" height="1068"/>
+           width="400" height="533"
+         data-fallback="assets/images/stock-hair-colouring.webp"/>
       <div class="gal-overlay">
         <span class="gal-label">Hair Colouring</span>
       </div>
@@ -1827,10 +1829,11 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 3 -->
     <div class="gal-cell" onclick="openLB(2)">
-         <img src="assets/images/stock-hair-transformation.webp"
+       <img src="assets/images/2025-07-20.webp"
            alt="Hair transformation before and after at RK Unisex Salon"
            loading="lazy" class="gal-bg"
-           width="1600" height="1067"/>
+           width="400" height="599"
+         data-fallback="assets/images/stock-hair-transformation.webp"/>
       <div class="gal-overlay">
         <span class="gal-label">Transformation</span>
       </div>
@@ -1838,10 +1841,11 @@ body.no-scroll { overflow: hidden; }
     </div>
     <!-- Cell 4 -->
     <div class="gal-cell" onclick="openLB(3)">
-         <img src="assets/images/stock-scalp-treatment.webp"
+       <img src="assets/images/2025-07-20 (1).webp"
            alt="Scalp cleansing treatment at RK Unisex Salon Korutla"
            loading="lazy" class="gal-bg"
-           width="1600" height="1200"/>
+           width="400" height="891"
+         data-fallback="assets/images/stock-scalp-treatment.webp"/>
       <div class="gal-overlay">
         <span class="gal-label">Scalp Treatment</span>
       </div>
@@ -2342,11 +2346,20 @@ document.getElementById('bookModal').addEventListener('click', function(e) {
 /* ════════════════════
    GALLERY LIGHTBOX
 ════════════════════ */
+document.querySelectorAll('#gallery img[data-fallback]').forEach((imageEl) => {
+  imageEl.addEventListener('error', function onImgError() {
+    const fallbackSrc = imageEl.getAttribute('data-fallback');
+    if (!fallbackSrc) return;
+    imageEl.removeEventListener('error', onImgError);
+    imageEl.src = fallbackSrc;
+  });
+});
+
 const lbImages = [
-  { src: 'assets/images/stock-men-haircut.webp',            label: "Men's Haircut" },
-  { src: 'assets/images/stock-hair-colouring.webp',         label: 'Hair Colouring' },
-  { src: 'assets/images/stock-hair-transformation.webp',    label: 'Hair Transformation' },
-  { src: 'assets/images/stock-scalp-treatment.webp',        label: 'Scalp Treatment' },
+  { src: 'assets/images/rksalon.webp',                      label: "Men's Haircut",       fallback: 'assets/images/stock-men-haircut.webp' },
+  { src: 'assets/images/rksalonimage1.webp',                label: 'Hair Colouring',      fallback: 'assets/images/stock-hair-colouring.webp' },
+  { src: 'assets/images/2025-07-20.webp',                   label: 'Hair Transformation', fallback: 'assets/images/stock-hair-transformation.webp' },
+  { src: 'assets/images/2025-07-20 (1).webp',               label: 'Scalp Treatment',     fallback: 'assets/images/stock-scalp-treatment.webp' },
   { src: 'assets/images/stock-bridal-styling.webp',         label: 'Bridal Styling' },
   { src: 'assets/images/stock-premium-hair-spa.webp',       label: 'Premium Hair Spa' },
   { src: 'assets/images/stock-skin-glow-facial.webp',       label: 'Skin Glow Facial' },
