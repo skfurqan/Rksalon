@@ -689,30 +689,26 @@ p { line-height:1.85; }
 }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: 260px 260px;
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  align-items: start;
 }
 .gal-cell {
   position: relative;
   overflow: hidden;
   cursor: pointer;
   background: #1a1a1a;
+  border-radius: 2px;
 }
-.gal-cell:first-child {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-.gal-cell img.gal-bg {
+.gal-bg {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   display: block;
-  transition: transform 0.6s ease;
+  transition: transform .6s cubic-bezier(.43,0,.43,1);
+  object-fit: cover;
 }
-.gal-cell:hover img.gal-bg {
-  transform: scale(1.06);
+.gal-cell:hover .gal-bg {
+  transform: scale(1.05);
 }
 .g-bg1 { background:linear-gradient(145deg,#1a1a1a,#2a1a10,#1a1a1a); }
 .g-bg2 { background:linear-gradient(145deg,#1a1a24,#111,#201828); }
@@ -1049,15 +1045,6 @@ footer {
 
   .pillars { grid-template-columns:repeat(2,1fr); }
 
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 220px 220px 220px;
-  }
-  .gal-cell:first-child {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
   .foot-top { grid-template-columns:1fr 1fr; gap:36px; }
 
   .reviews-grid { grid-template-columns:repeat(2,1fr); }
@@ -1088,15 +1075,13 @@ footer {
 
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 180px);
-  }
-  .gal-cell:first-child {
-    grid-column: span 2;
-    grid-row: span 2;
+    gap: 4px;
   }
 
-  .gal-zoom {
-    display: none !important;
+  .gal-bg {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
   }
 
   .reviews-grid { grid-template-columns:1fr; }
@@ -1127,15 +1112,16 @@ footer {
   .fr { grid-template-columns:1fr; }
 
   .gallery-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
   }
-  .gal-cell {
-    height: 240px;
+  .gal-bg {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
   }
-  .gal-cell:first-child {
-    grid-column: span 1;
-    grid-row: span 1;
+  .gal-zoom {
+    display: none !important;
   }
 
   .rating-banner { flex-direction:column; align-items:flex-start; gap:10px; }
@@ -2450,6 +2436,76 @@ document.getElementById('lightbox').addEventListener('touchend', e => {
   const diff = _tx - e.changedTouches[0].clientX;
   if (Math.abs(diff) > 50) lbNav(diff > 0 ? 1 : -1);
 }, { passive: true });
+
+// -- Gallery Auto Image Fit ------------------
+function initGalleryFit() {
+  // Only run on desktop (above 768px)
+  if (window.innerWidth <= 768) return;
+
+  const cells = document.querySelectorAll('.gal-cell');
+
+  cells.forEach(function(cell) {
+    const img = cell.querySelector('.gal-bg');
+    if (!img) return;
+
+    // If image already loaded
+    if (img.complete && img.naturalHeight !== 0) {
+      setNaturalHeight(cell, img);
+    } else {
+      // Wait for image to load
+      img.addEventListener('load', function() {
+        setNaturalHeight(cell, img);
+      });
+    }
+  });
+}
+
+function setNaturalHeight(cell, img) {
+  const naturalW = img.naturalWidth;
+  const naturalH = img.naturalHeight;
+
+  if (!naturalW || !naturalH) return;
+
+  // Get actual rendered width of cell
+  const cellWidth = cell.offsetWidth;
+
+  // Calculate proportional height
+  const ratio = naturalH / naturalW;
+  let height = Math.round(cellWidth * ratio);
+
+  // Set min and max height limits
+  // Min: 200px so small images don't look too flat
+  // Max: 500px so portrait images don't get too tall
+  height = Math.max(200, Math.min(height, 500));
+
+  // Apply height to cell
+  cell.style.height = height + 'px';
+
+  // Make image fill the cell
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'cover';
+  img.style.objectPosition = 'center top';
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', function() {
+  initGalleryFit();
+});
+
+// Re-run on window resize
+let galleryResizeTimer;
+window.addEventListener('resize', function() {
+  clearTimeout(galleryResizeTimer);
+  galleryResizeTimer = setTimeout(function() {
+    // Reset all cell heights first
+    document.querySelectorAll('.gal-cell').forEach(function(cell) {
+      cell.style.height = '';
+    });
+    initGalleryFit();
+  }, 250);
+});
+// -- End Gallery Auto Fit --------------------
 
 </script>
 
